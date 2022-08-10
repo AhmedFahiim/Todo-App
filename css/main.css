@@ -1,0 +1,261 @@
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.main {
+  position: relative;
+  height: 100vh;
+  background-color: #181824;
+}
+.main::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 40%;
+  top: 0;
+  left: 0;
+  background-image: url(../images/bg-desktop-dark.jpg);
+  background-size: cover;
+}
+.main .list {
+  position: relative;
+  width: 35%;
+  top: 14%;
+  margin: auto;
+  z-index: 1;
+}
+.main .list .head {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .list .head h1 {
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+.main .list .head img {
+  cursor: pointer;
+}
+.main .list .create-new {
+  background-color: #25273c;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding: 0 20px;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.main .list .create-new .create,
+.main .list .create-new .task-body {
+  background-color: transparent;
+}
+.main .list .create-new .create {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #626266;
+  cursor: pointer;
+}
+.main .list .create-new .create:hover {
+  border: 1px solid hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%);
+}
+.main .list .create-new .task-body {
+  font-family: "Josefin Sans", sans-serif;
+  flex: 1;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  padding: 20px;
+  color: hsl(236deg, 33%, 92%);
+  line-height: 1.5;
+  caret-color: hsl(220deg, 98%, 61%);
+}
+.main .list .create-new .task-body::-moz-placeholder {
+  font-size: 14px;
+  color: #5b5d74;
+}
+.main .list .create-new .task-body:-ms-input-placeholder {
+  font-size: 14px;
+  color: #5b5d74;
+}
+.main .list .create-new .task-body::placeholder {
+  font-size: 14px;
+  color: #5b5d74;
+}
+.main .tasks {
+  margin-top: 40px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.main .tasks .nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #25273c;
+  padding: 20px;
+}
+.main .tasks .nav-bar .tab,
+.main .tasks .nav-bar .clear-Completed {
+  font-size: 15px;
+}
+.main .tasks .nav-bar .tab:hover,
+.main .tasks .nav-bar .clear-Completed:hover {
+  transition: 0.3s;
+  color: hsl(236deg, 33%, 92%);
+}
+.main .tasks .nav-bar .remains {
+  font-size: 13px;
+  font-weight: 500;
+  color: #46485f;
+}
+.main .tasks .nav-bar .controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin-left: 15px;
+}
+.main .tasks .nav-bar .tab {
+  color: #50526b;
+  margin-right: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.main .tasks .nav-bar .tab.active {
+  color: hsl(220deg, 98%, 61%);
+}
+.main .tasks .nav-bar .clear-Completed {
+  color: #46485f;
+  cursor: pointer;
+}
+.main .new-task {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #25273c;
+  padding: 20px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: hsl(235deg, 19%, 35%);
+}
+.main .new-task .task-handel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #626266;
+  cursor: pointer;
+}
+.main .new-task .task-handel .checked {
+  display: none;
+}
+.main .new-task .task-body {
+  flex: 1;
+  padding-left: 15px;
+}
+.main .new-task .task-body .task-name {
+  color: hsl(236deg, 33%, 92%);
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.main .new-task .delete-Task {
+  background-color: transparent;
+  font-size: 20px;
+  color: #626266;
+  transition: 0.3s;
+  opacity: 0;
+  cursor: pointer;
+  border: none;
+}
+.main .new-task .delete-Task:hover {
+  color: hsl(236deg, 33%, 92%);
+}
+.main .new-task:hover .delete-Task {
+  opacity: 1;
+}
+.main .new-task.Completed .task-name {
+  color: #50526b;
+  text-decoration: line-through;
+}
+.main .new-task.Completed .task-handel {
+  background-image: linear-gradient(hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+  border: none;
+}
+.main .new-task.Completed .task-handel .checked {
+  display: block;
+}
+
+.main.light {
+  background-color: #fff;
+}
+.main.light.light::after {
+  background-image: url(../images/bg-desktop-light.jpg);
+}
+.main.light .create-new {
+  background-color: #fff;
+}
+.main.light .create-new .task-body {
+  color: hsl(235deg, 19%, 35%);
+}
+.main.light .nav-bar {
+  background-color: #fff;
+}
+.main.light .nav-bar .remains {
+  color: hsl(233deg, 11%, 84%);
+}
+.main.light .nav-bar .tab,
+.main.light .nav-bar .clear-Completed {
+  color: hsl(236deg, 9%, 61%);
+}
+.main.light .nav-bar .tab:hover,
+.main.light .nav-bar .clear-Completed:hover {
+  color: hsl(235deg, 19%, 35%);
+}
+.main.light .nav-bar .tab.active,
+.main.light .nav-bar .clear-Completed.active {
+  color: hsl(220deg, 98%, 61%);
+}
+.main.light .new-task {
+  background-color: #fff;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: hsl(233deg, 9%, 61%);
+}
+.main.light .new-task .task-name,
+.main.light .new-task .delete-Task {
+  color: hsl(235deg, 19%, 35%);
+}
+
+@media (max-width: 767px) {
+  .main .list {
+    width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .main .list {
+    width: 50%;
+  }
+}/*# sourceMappingURL=main.css.map */
