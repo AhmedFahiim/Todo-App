@@ -29,7 +29,7 @@ ul {
 }
 .main .list {
   position: relative;
-  width: 35%;
+  width: 50%;
   top: 14%;
   margin: auto;
   z-index: 1;
@@ -58,7 +58,8 @@ ul {
   margin-top: 15px;
   padding: 0 20px;
   border-radius: 5px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .main .list .create-new .create,
 .main .list .create-new .task-body {
@@ -100,7 +101,8 @@ ul {
 }
 .main .tasks {
   margin-top: 40px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .main .tasks .nav-bar {
   display: flex;
@@ -201,7 +203,10 @@ ul {
   text-decoration: line-through;
 }
 .main .new-task.Completed .task-handel {
-  background-image: linear-gradient(hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+  background-image: linear-gradient(
+    hsl(192deg, 100%, 67%),
+    hsl(280deg, 87%, 65%)
+  );
   border: none;
 }
 .main .new-task.Completed .task-handel .checked {
@@ -254,8 +259,14 @@ ul {
     width: 90%;
   }
 }
+@media (max-width: 400px) {
+  .main .tasks .nav-bar .tab,
+  .main .tasks .nav-bar .clear-Completed {
+    font-size: 11px;
+  }
+}
 @media (min-width: 768px) and (max-width: 1199px) {
   .main .list {
-    width: 50%;
+    width: 70%;
   }
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
